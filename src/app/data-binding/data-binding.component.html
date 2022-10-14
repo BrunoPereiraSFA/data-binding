@@ -1,0 +1,60 @@
+<section class="property-bindig">
+    <!--article>
+        <h3>Interpolation / Interpolação</h3>
+        <p>interpolação {{ url }}</p>
+        <p> o valor de 1 + 1 é igual a {{ getResultado()}}</p>
+    </article>
+
+    <article>
+        <h3>Property Bnding</h3>
+        <img src={{urlImagem}}>
+    </article>
+
+    <article>
+        <h1> Class e Style Bindig</h1>
+        <div>
+            selecione uma classe:
+            <br>
+            <select #classe (change)="0">
+                <br>
+                <option value="alert-success">Sucesso</option>
+                <option value="alert-info">Info</option>
+                <option value="alert-warning">Alerta</option>
+                <option value="alert-danger">Erro</option><br>
+            </select>
+            
+            <div class="alert" role="alert"
+            [class.alert-success]="classe.value == 'alert-success'">
+                SUCESSO
+              </div>
+              <div class="alert" role="alert"
+              [class.alert-info]="classe.value == 'alert-info'">
+                INFO
+              </div>
+              <div class="alert" role="alert"
+              [class.alert-warning]="classe.value == 'alert-warning'">
+                ALERTA
+              </div>
+              <div class="alert" role="alert"
+              [class.alert-danger]="classe.value == 'alert-danger'">
+                PERIGO
+              </div>
+        </div>
+    </article>
+</section-->
+
+<section>
+    <article>
+        <h4>Event Binding</h4>
+        <button (click)="botaoClicado()" type="button" class="btn btn-primary">Primary</button>
+        <br><br>
+
+        <input type="text" 
+        (keyup)="onKeyUp($event)" 
+        (keyup.enter)="salvarValor($event.target.value)" />
+
+        <p> Valor Digitado: {{valorAtual}}</p>
+    </article>
+</section>
+</section>
+
