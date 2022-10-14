@@ -51,9 +51,20 @@
 
         <input type="text" 
         (keyup)="onKeyUp($event)" 
-        (keyup.enter)="salvarValor($event.target.value)" />
+        (keyup.enter)="salvarValor(campoImput.value)"
+        (blur)="salvarValor(campoImput.value)" 
+        #campoImput/>
 
         <p> Valor Digitado: {{valorAtual}}</p>
+        <p> Valor salvo: {{valorSalvo}}</p>
+
+        <br>
+        <span (mouseover)="OnMouseOverOut()"
+              (mouseout)="OnMouseOverOut()"
+              [class.highLight]="isMouseOver"
+         >
+            Passe o mouse sobre mim!
+        </span>
     </article>
 </section>
 </section>
