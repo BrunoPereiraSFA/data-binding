@@ -34,6 +34,7 @@ export class DataBindingComponent implements OnInit {
 
   OnMouseOverOut(){
     this.isMouseOver= !this.isMouseOver; 
+
   }
 
   constructor() { }
