@@ -5,14 +5,22 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './data-binding.component.html',
   styleUrls: ['./data-binding.component.css']
 })
-export class DataBindingComponent implements OnInit {
+export class DataBindingComponent {
 
   url: string = "https://google.com.br";
   urlImagem = 'https://t.ctcdn.com.br/P7-_JvQTS4U7-if6zHyXjyMiNQ8=/400x400/smart/i606944.png';
   valorAtual: string='';
   valorSalvo='';
-
   isMouseOver: boolean=false;
+  nomeDoCurso: string = 'Angular';
+  valorInicial = 15;
+  clique: boolean = false;
+
+  public livros = [
+    'Como morrem os pobres e outros ensaios',
+    'A revolução dos bichos',
+    '1988'
+ ];
 
   getResultado(){
     return 2;
@@ -34,11 +42,20 @@ export class DataBindingComponent implements OnInit {
 
   OnMouseOverOut(){
     this.isMouseOver= !this.isMouseOver; 
+
   }
 
-  constructor() { }
+  onMudouValor(evento: any){
+    console.log(evento.novoValor);
 
-  ngOnInit(): void {
+  }
+
+  onAparecer(){
+    this.clique = !this.clique;
+  }
+
+  constructor() {
+    
   }
 
 }

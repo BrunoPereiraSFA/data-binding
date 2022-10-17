@@ -94,11 +94,68 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "primeiro-projeto:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "primeiro-projeto:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "primeiro-projeto:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "primeiro-projeto:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "primeiro-projeto:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "primeiro-projeto:serve:production"
+            }
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "540c1904-ec57-4afd-9a06-dd538fa19966"
+    "analytics": "540c1904-ec57-4afd-9a06-dd538fa19966",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

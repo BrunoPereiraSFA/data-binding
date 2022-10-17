@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.css']
 })
-export class CursosComponent implements OnInit {
+export class CursosComponent {
 
   nomePortal: string;
 
@@ -19,8 +19,5 @@ export class CursosComponent implements OnInit {
 
   this.cursos = this.cursosService.getCursos();
    }
-
-  ngOnInit(): void {
-  }
 
 }
