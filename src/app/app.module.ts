@@ -10,6 +10,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { MeuFormModule } from './meu-form/meu-form.module';
 import { InputPropertyComponent } from './input-property/input-property.component';
 import { OutputPropertyComponent } from './output-property/output-property.component';
+import { FunilComponent } from './funil/funil.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { OutputPropertyComponent } from './output-property/output-property.compo
     DataBindingComponent,
     InputPropertyComponent,
     OutputPropertyComponent,
+    FunilComponent,
   ],
   imports: [
     BrowserModule,
