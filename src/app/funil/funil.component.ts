@@ -41,21 +41,20 @@ const ELEMENT_DATA2: Etapa2[] = [
 })
 export class MetasComponent implements OnInit {
 
-  displayedColumns: string[] = ['acoes', 'nomeStatus', 'ordem'];
-  
-  dataSource = new MatTableDataSource<StatusEtapa>(ELEMENT_DATA);
-
-  displayedColumns2: string[] = ['acoes', 'nomeEtapa', 'ordemEtapa', 'statusEtapa'];
-  
-  dataSource2 = new MatTableDataSource<Etapa2>(ELEMENT_DATA2);
- 
-
-  constructor(
-   
-  ) {}
+   name: string
+  order: number
+  constructor(public dialogRef: MatDialogRef<ModalEditarFunilComponent>) { }
 
   ngOnInit(): void {
-   
+  }
+
+   cancel(): void {
+    this.dialogRef.close();
+  }
+
+  save(): void {
+    const step = { name: this.name, order: this.order };
+    this.dialogRef.close(step);
   }
 
 }
