@@ -1,114 +1,24 @@
-<div class="body">
-  <div class="page">
-    <div class="arrowBack">
-        <mat-icon class="button-back">arrow_back_ios</mat-icon>
-        <span>Funil</span>
-    </div>
-
-    <div>
-      <button style="margin-top: 44px; margin-bottom: 40px;" class="button-padrao" mat-raised-button >Criar</button>
-    </div>
-
-    <mat-table #table  [dataSource]="dataSource2" scrollX="true">
-      <ng-container matColumnDef="acoes">
-        <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <div class="action-button">
-            <button class="button"><mat-icon class="icon-button">edit</mat-icon>
-            </button>
-            <button class="button"><mat-icon class="icon-button">delete_forever</mat-icon>
-            </button>
-          </div>
-        </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="nomeEtapa">
-        <mat-header-cell *matHeaderCellDef >Nome da Etapa</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{ element.nomeEtapa}}
-        </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="ordemEtapa">
-        <mat-header-cell *matHeaderCellDef >Ordem</mat-header-cell>
-        <mat-cell tyle="text-align: center"  *matCellDef="let element">{{ element.ordem }}
-        </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="statusEtapa">
-        <mat-header-cell *matHeaderCellDef >Status da Etapa</mat-header-cell>
-        <mat-cell tyle="text-align: center"  *matCellDef="let element">{{ element.statusEtapa }}
-        </mat-cell>
-      </ng-container>
-    
-      <mat-header-row *matHeaderRowDef="displayedColumns2" style="height: 31px"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns2"></mat-row>
-    </mat-table>
-
-
-
-<div style="display:none;">
-
-    <div style="margin-top: 31px; " fxLayout="row">
-      <div style="margin-right:16px ;" fxLayout="column">
-        <span class="label-titulo">Nome da Etapa</span>
-        <mat-form-field class="largura-input" appearance="outline">
-          <input matInput placeholder="placeholder">
-        </mat-form-field>
-      </div>
-    
-      <div fxLayout="column">
-        <span class="label-titulo">Ordem</span>
-        <mat-form-field appearance="outline" style="width: 93px;">
-          <input matInput type="number" >
-        </mat-form-field>
-      </div>
-    </div>
-
-    <div fxLayout="row">
-      <div fxLayout="column" >
-        <span class="label-titulo">Adicionar Status da Etapa</span>
-        <div>
-          <mat-form-field class="largura-input" appearance="outline">
-            <input matInput placeholder="Digite nome do status">
+<mat-dialog-content>
+    <form #stepForm="ngForm">
+        <span class="label-titulo">Editar Etapa</span>
+      <div style="margin-top: 34px; margin-bottom: 10px;" fxLayout="row">
+        <div style="margin-right: 16px;" fxLayout="column">
+          <span class="label-titulo">Nome da Etapa</span>
+          <mat-form-field class="largura-input" appearance="outline" style="width: 323px;">
+            <input matInput placeholder="placeholder">
           </mat-form-field>
-          <button mat-icon-button matTooltip="Deletar Mapa"><mat-icon class="mat-button-table">check</mat-icon></button>
+        </div>
+  
+        <div fxLayout="column">
+          <span class="label-titulo">Ordem</span>
+          <mat-form-field appearance="outline" style="width: 86px;">
+            <input matInput type="number">
+          </mat-form-field>
         </div>
       </div>
-    </div>
-
-    <mat-table #table id="tabela-conexoes" [dataSource]="dataSource" scrollX="true">
-      <ng-container matColumnDef="acoes">
-        <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <div class="action-button">
-            <button class="button"><mat-icon class="icon-button">edit</mat-icon>
-            </button>
-            <button class="button"><mat-icon class="icon-button">delete_forever</mat-icon>
-            </button>
-          </div>
-        </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="nomeStatus">
-        <mat-header-cell *matHeaderCellDef >Nome do Status</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{ element.nomeStatus }}
-        </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="ordem">
-        <mat-header-cell *matHeaderCellDef >Ordem</mat-header-cell>
-        <mat-cell tyle="text-align: center"  *matCellDef="let element">{{ element.ordem }}
-        </mat-cell>
-      </ng-container>
-    
-      <mat-header-row *matHeaderRowDef="displayedColumns" style="height: 31px"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-    </mat-table>
-
-    <div class="save-button" >
-        <button class="cancela-btn" >Cancelar</button>
-        <button mat-raised-button color="primary" class="button-salvar"> Adicionar </button>
-    </div>
-  </div>
-  </div>
+    </form>
+  </mat-dialog-content>
+  <div class="save-button" >
+    <button class="cancela-btn"(click)="cancel()"  >Cancelar</button>
+    <button mat-raised-button color="primary" (click)="save()" class="button-salvar"> Salvar </button>
 </div>
